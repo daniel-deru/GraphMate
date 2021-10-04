@@ -1,5 +1,5 @@
 import {useEffect} from "react"
-import "jspdf"
+import Plot from "react-plotly.js"
 import './App.css';
 
 function App() {
