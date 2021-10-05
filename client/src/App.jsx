@@ -2,10 +2,13 @@ import { useEffect } from "react"
 import Plot from "react-plotly.js"
 import { jsPDF } from "jspdf"
 import html2canvas from "html2canvas"
+import * as htmlToImage from "html-to-image"
+import download from "downloadjs"
 import './App.css';
 
 // Import the components
 import Header from "./components/jsx/Header";
+import { downloadImage } from "plotly.js"
 
 function App() {
 
@@ -29,7 +32,7 @@ function App() {
 
   useEffect(() => {
     const data = document.querySelector("#data")
-    const doc = new jsPDF('p', 'mm', 'a4')
+    
     // doc.html(document.querySelector("#data"), {
 		// 	callback: function (pdf) {
 		// 		var iframe = document.createElement('iframe');
@@ -38,15 +41,25 @@ function App() {
 		// 		iframe.src = pdf.output('datauristring');
 		// 	}
 		// });
-    
-    doc.addImage(make_image(), "PNG", 0, 0)
-    doc.save("pdf")
+    const image = make_image()
+    // doc.addImage(image, "png", 10, 78, 15, 12)
+    console.log(image)
+    // doc.save("pdf")
+    // make_image()
   }, [])
 
   const make_image = () => {
-    html2canvas(document.querySelector("#data")).then(canvas => {
-        return canvas
-    });
+    const graph = document.querySelector("#data")
+    htmlToImage.toPng(graph).then((dataURL) => {
+      const image = new Image()
+      image.src = dataURL
+      console.log(dataURL)
+      // console.log(image)
+      // download(dataURL, "node.png")
+      const doc = new jsPDF('p', 'mm', 'a4')
+      doc.addImage(dataURL, "png", 10, 78)
+      doc.save("image")
+    })
   }
   
   return (
