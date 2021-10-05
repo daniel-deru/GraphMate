@@ -3,10 +3,14 @@ import { FaBars } from "react-icons/fa"
 
 const Header = () => {
     return (
-        <div>
+        <header>
             <h1>Charter</h1>
-            <FaBars/>
-        </div>
+            <select name="chart" id="chart-select">
+                <option value="" disabled>Select Chart Type</option>
+                
+            </select>
+            <FaBars id="menu-icon"/>
+        </header>
     )
 }
 

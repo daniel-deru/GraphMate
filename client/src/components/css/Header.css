@@ -1,0 +1,18 @@
+header {
+    background-color: var(--main-blue);
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    height: 10vh;
+}
+
+#menu-icon {
+    padding: 10px;
+    vertical-align: middle;
+    font-size: 1.5em;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0 10px;
+}
