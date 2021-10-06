@@ -1,23 +1,21 @@
 import "../css/Header.css"
-import { Link } from "react-router-dom"
 import { useHistory } from "react-router"
-import { useRef } from "react"
+import { useRef, useEffect } from "react"
 
 const Header = () => {
     const history = useHistory()
     const selectRef = useRef()
     
-    const handleRoute = (route) => {
-        history.push(`${route}`)
-        console.log(selectRef)
+    useEffect(() => {
         Array.from(selectRef.current.children).forEach( (child, i) => {
             if (window.location.pathname === child.value){
-                selectRef.current.currentIndex = child.index
+                selectRef.current.selectedIndex = i
             }
         })
-        // console.log(selectRef)
-        // console.log(window.location.pathname)
-        
+    }, [])
+
+    const handleRoute = (route) => {
+        history.push(`${route}`)
     }
     return (
         <header>
