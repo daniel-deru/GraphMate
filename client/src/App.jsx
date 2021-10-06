@@ -5,30 +5,21 @@ import html2canvas from "html2canvas"
 import * as htmlToImage from "html-to-image"
 import download from "downloadjs"
 import './App.css';
+import { BrowserRouter, Switch, Route } from "react-router-dom"
 
 // Import the components
 import Header from "./components/jsx/Header";
-import { downloadImage } from "plotly.js"
+import Chart from "./components/jsx/Chart"
+import Bar from "./components/jsx/Bar"
+import Line from "./components/jsx/Line"
+import Pie from "./components/jsx/Pie"
+import Histogram from "./components/jsx/Histogram"
+import Scatter from "./components/jsx/Scatter"
 
 function App() {
 
   // go to these websites to read more about the libs
-  //https://html2canvas.hertzen.com/
   //https://plotly.com/javascript/react/
-  // useEffect(() => {
-  //   const element = document.getElementById('element-to-print');
-  //   const options = {
-  //     margin:       1,
-  //     filename:     'myfile.pdf',
-  //     image:        { type: 'jpeg', quality: 0.98 },
-  //     html2canvas:  { scale: 1 },
-  //     jsPDF:        { unit: 'in', format: 'page', orientation: 'portrait' },
-  //     source: element,
-  //     download: true
-  //   }
-  //   Html2Pdf.getPdf(options)
-    
-  // })
 
   useEffect(() => {
     
@@ -49,23 +40,18 @@ function App() {
   
   return (
     <div className="App">
+      <BrowserRouter>
         <Header/>
-        <div id="data">
-            {/* <Plot
-            data={[
-              {
-                x: [1, 2, 3],
-                y: [2, 6, 3],
-                type: 'scatter',
-                mode: 'lines+markers',
-                marker: {color: 'red'},
-              },
-              {type: 'bar', x: [1, 2, 3], y: [2, 5, 3]},
-            ]}
-            layout={ {width: 720, height: 540, title: 'A Fancy Plot'} }
-           /> */}
-        </div>
-        
+        <Switch>
+          <Route exact path="/line" component={Line}/>
+          <Route exact path="/bar" component={Bar}/>
+          <Route exact path="/pie" component={Pie}/>
+          <Route exact path="/histogram" component={Histogram}/>
+          <Route exact path="/scatter" component={Scatter}/>
+        </Switch>
+        <Chart/>
+      </BrowserRouter>
+       
     </div>
   );
 }
