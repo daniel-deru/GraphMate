@@ -31,21 +31,7 @@ function App() {
   // })
 
   useEffect(() => {
-    const data = document.querySelector("#data")
     
-    // doc.html(document.querySelector("#data"), {
-		// 	callback: function (pdf) {
-		// 		var iframe = document.createElement('iframe');
-		// 		iframe.setAttribute('style', 'position:absolute;right:0; top:0; bottom:0; height:100%; width:500px');
-		// 		document.body.appendChild(iframe);
-		// 		iframe.src = pdf.output('datauristring');
-		// 	}
-		// });
-    const image = make_image()
-    // doc.addImage(image, "png", 10, 78, 15, 12)
-    console.log(image)
-    // doc.save("pdf")
-    // make_image()
   }, [])
 
   const make_image = () => {
@@ -54,7 +40,6 @@ function App() {
       const image = new Image()
       image.src = dataURL
       console.log(dataURL)
-      // console.log(image)
       // download(dataURL, "node.png")
       const doc = new jsPDF('p', 'mm', 'a4')
       doc.addImage(dataURL, "png", 10, 78)
@@ -66,7 +51,7 @@ function App() {
     <div className="App">
         <Header/>
         <div id="data">
-            <Plot
+            {/* <Plot
             data={[
               {
                 x: [1, 2, 3],
@@ -78,8 +63,7 @@ function App() {
               {type: 'bar', x: [1, 2, 3], y: [2, 5, 3]},
             ]}
             layout={ {width: 720, height: 540, title: 'A Fancy Plot'} }
-           />
-           <h1>hello</h1>
+           /> */}
         </div>
         
     </div>

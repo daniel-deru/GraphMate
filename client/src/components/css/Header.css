@@ -2,17 +2,35 @@ header {
     background-color: var(--main-blue);
     display: flex;
     justify-content: space-between;
+    align-items: center;
     color: white;
     height: 10vh;
 }
 
-#menu-icon {
-    padding: 10px;
-    vertical-align: middle;
-    font-size: 1.5em;
+header  > *{
+    margin: 20px;
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
 }
 
 header h1 {
+    text-align: left;
     margin: 0;
     padding: 0 10px;
 }
+
+/* #control-container {
+    width: 50vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#control-container > * {
+    height: fit-content;
+    outline: none;
+}
+ */
