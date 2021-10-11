@@ -9,20 +9,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--main-blue);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-.form-field-container {
-  width: 50%;
-  margin: auto;
-}
-
-.form-field-container > *{
-  display: block;
-  margin: auto;
-  text-align: center;
 }

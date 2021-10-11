@@ -1,10 +1,18 @@
 import "../css/Header.css"
 import { useHistory } from "react-router"
 import { useRef, useEffect } from "react"
+import { useSelector, useDispatch } from "react-redux"
+import { actionCreators } from "../../state/actionCreators/export"
+import { bindActionCreators } from "redux"
+
+
 
 const Header = () => {
     const history = useHistory()
     const selectRef = useRef()
+    const dispatch = useDispatch()
+    // const type = useSelector( (state) => state.type)
+    const { loadData } = bindActionCreators(actionCreators, dispatch)
     
     useEffect(() => {
         Array.from(selectRef.current.children).forEach( (child, i) => {
@@ -16,6 +24,8 @@ const Header = () => {
 
     const handleRoute = (route) => {
         history.push(`${route}`)
+        const type = route.substring(1)
+        loadData(type)
     }
     return (
         <header>

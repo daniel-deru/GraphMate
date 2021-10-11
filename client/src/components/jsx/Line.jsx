@@ -1,9 +1,11 @@
 import "../css/Line.css"
 
+import Basic from "../jsx/Basic"
+
 const Line = () => {
     return (
         <div>
-            <h1>This is the line</h1>
+            <Basic/>
         </div>
     )
 }

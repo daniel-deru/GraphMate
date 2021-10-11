@@ -1,9 +1,11 @@
 import "../css/Scatter.css"
 
+import Basic from "./Basic"
+
 const Scatter = () => {
     return (
         <div>
-            <h1>This is the scatter</h1>
+            <Basic/>
         </div>
     )
 }

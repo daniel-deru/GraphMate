@@ -1,9 +1,11 @@
 import "../css/Histogram.css"
 
+import Basic from "../jsx/Basic"
+
 const Histogram = () => {
     return (
         <div>
-            <h1>This is the histogram</h1>
+            <Basic/>
         </div>
     )
 }

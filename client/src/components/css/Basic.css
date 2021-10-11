@@ -1,0 +1,51 @@
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 50vw;
+    margin: auto;
+    text-align: center;
+}
+
+.form-field-container {
+    margin: auto;
+    text-align: center;
+    padding: 10px 20px;
+  }
+  
+  .form-field-container > *{
+    display: block;
+    margin: auto;
+    text-align: center;
+    color: var(--main-blue);
+  }
+
+  .form-field-container select {
+    border-radius: 10px;
+    font-size: 1.25em;
+    width: 15rem;
+  }
+
+  .form-field-container textarea {
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 1.25em;
+    width: 15rem;
+    text-align: left;
+  }
+
+  .form-field-container label {
+    font-size: 1.5em;
+  }
+
+  .form-field-container input[type=text] {
+    border-radius: 10px;
+    padding-left: 5px;
+    border: 1px solid grey;
+    /* padding: 10px; */
+    font-size: 1.25em;
+    width: 15rem;
+  }
+
+  .form-field-container > *:focus {
+       outline: 1px solid var(--main-blue);
+  }

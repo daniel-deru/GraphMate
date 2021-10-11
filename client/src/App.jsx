@@ -1,11 +1,17 @@
-import { useEffect } from "react"
+
 import Plot from "react-plotly.js"
 import { jsPDF } from "jspdf"
 import html2canvas from "html2canvas"
 import * as htmlToImage from "html-to-image"
 import download from "downloadjs"
 import './App.css';
-import { BrowserRouter, Switch, Route } from "react-router-dom"
+import { Switch, Route } from "react-router-dom"
+import { bindActionCreators } from "redux"
+import { actionCreators } from "./state/actionCreators/export"
+
+// Hooks
+import { useEffect } from "react"
+import { useSelector, useDispatch } from "react-redux"
 
 // Import the components
 import Header from "./components/jsx/Header";
@@ -25,6 +31,10 @@ function App() {
     
   }, [])
 
+  const state = useSelector( (state) => state)
+  const dispatch = useDispatch()
+  const AC = bindActionCreators(actionCreators, dispatch)
+
   const make_image = () => {
     const graph = document.querySelector("#data")
     htmlToImage.toPng(graph).then((dataURL) => {
@@ -39,20 +49,20 @@ function App() {
   }
   
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Header/>
-        <Switch>
-          <Route exact path="/line" component={Line}/>
-          <Route exact path="/bar" component={Bar}/>
-          <Route exact path="/pie" component={Pie}/>
-          <Route exact path="/histogram" component={Histogram}/>
-          <Route exact path="/scatter" component={Scatter}/>
-        </Switch>
-        <Chart/>
-      </BrowserRouter>
-       
-    </div>
+      <div className="App">
+          <Header/>
+          <div id="main">
+            <Switch>
+              <Route exact path="/line" component={Line}/>
+              <Route exact path="/bar" component={Bar}/>
+              <Route exact path="/pie" component={Pie}/>
+              <Route exact path="/histogram" component={Histogram}/>
+              <Route exact path="/scatter" component={Scatter}/>
+            </Switch>
+            <Chart/> 
+          </div>
+
+      </div>
   );
 }
 
