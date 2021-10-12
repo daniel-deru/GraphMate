@@ -6,7 +6,8 @@ import { useEffect, useState } from "react"
 const Chart = () => {
     const [data, setData] = useState()
     const type = useSelector( ( state ) => state.type)
-    
+    const graphData = useSelector((state) => state.data)
+    // console.log(graphData)
     const layout = {width: window.innerWidth/2, title: 'A Fancy Plot'}
 
     

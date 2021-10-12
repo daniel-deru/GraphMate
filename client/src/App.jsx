@@ -59,7 +59,7 @@ function App() {
               <Route exact path="/histogram" component={Histogram}/>
               <Route exact path="/scatter" component={Scatter}/>
             </Switch>
-            <Chart/> 
+            <Chart/>
           </div>
 
       </div>

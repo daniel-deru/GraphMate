@@ -12,7 +12,7 @@ const Header = () => {
     const selectRef = useRef()
     const dispatch = useDispatch()
     // const type = useSelector( (state) => state.type)
-    const { loadData } = bindActionCreators(actionCreators, dispatch)
+    const { loadGraph } = bindActionCreators(actionCreators, dispatch)
     
     useEffect(() => {
         Array.from(selectRef.current.children).forEach( (child, i) => {
@@ -25,7 +25,7 @@ const Header = () => {
     const handleRoute = (route) => {
         history.push(`${route}`)
         const type = route.substring(1)
-        loadData(type)
+        loadGraph(type)
     }
     return (
         <header>
