@@ -6,19 +6,24 @@ import { useEffect, useState } from "react"
 const Chart = () => {
     const [data, setData] = useState()
     const type = useSelector( ( state ) => state.type)
-    const graphData = useSelector((state) => state.data)
-    // console.log(graphData)
-    const layout = {width: window.innerWidth/2, title: 'A Fancy Plot'}
-
-    
+    const storeData = useSelector((state) => state.data)
+    const layout = {width: window.innerWidth/2, title: 'Enter Your Title here'}
 
     const createGraph = () => {
+        let mode = null
+        switch(window.location.pathname){
+            case "/scatter": mode = "markers"
+            break
+            case "/line": mode = "lines+markers"
+            break
+            default: mode = null
+        }
         const data = [
             {
-                y: [19, 26, 55],
-                x: [1, 2, 3],
+                y: storeData.y,
+                x: storeData.x,
                 type: type,
-                name: "other"
+                mode: mode
             }
         ]
         return data
@@ -27,30 +32,29 @@ const Chart = () => {
     const createPie = () => {
         const data = [
             {
-                values: [19, 26, 55],
-                labels: [1, 2, 3],
+                values: storeData.y,
+                labels: storeData.x,
                 type: type,
-                name: "pie"
             }
         ]
         return data
     }
 
-    
-
     useEffect(() => {
         const data = type == "pie" ? createPie() : createGraph()
         setData(data)
-        console.log(data)
-    }, [type])
-  
+    }, [type, storeData])
+
     
     return (
         <div>
             <Plot
                 data={data}
                 layout={layout}
-                config={{editable: true}}
+                config={{   scrollZoom: false,
+                            staticPlot: true,
+                            displayModeBar: false,
+                        }}
            />
         </div>
     )

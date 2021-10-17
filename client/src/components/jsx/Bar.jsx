@@ -1,12 +1,17 @@
 import "../css/Bar.css"
 import "../../index.css"
+import "../css/Basic.css"
 
-import Basic from "./Basic"
+import Data from "./Data"
+import Axis from "./Axis"
+import General from "./General"
 
 const Bar = () => {
     return (
         <div>
-           <Basic/>
+            <General/>
+           <Data/>
+           <Axis/>
            <div className="form-container">
                 <div className="form-field-container">
                     <label htmlFor="width">Width</label>

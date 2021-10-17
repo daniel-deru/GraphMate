@@ -1,11 +1,16 @@
 import "../css/Histogram.css"
+import "../css/Basic.css"
 
-import Basic from "../jsx/Basic"
+import Data from "./Data"
+import Axis from "./Axis"
+import General from "./General"
 
 const Histogram = () => {
     return (
         <div>
-            <Basic/>
+            <General/>
+            <Data/>
+            <Axis/>
         </div>
     )
 }

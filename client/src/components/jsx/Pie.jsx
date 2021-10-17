@@ -1,15 +1,18 @@
 import "../css/Pie.css"
 import "../../index.css"
+import "../css/Basic.css"
 import { useState } from "react"
 
-import Basic from "./Basic"
+import Data from "./Data"
+import General from "./General"
 
 const Pie = () => {
     const [graphData, setGraphData] = useState({type: "pie"})
     return (
         <div>
-            <Basic/>
-            {/* this is specific to pie charts */}
+            <General/>
+            <Data/>
+            
             <div className="form-field-container">
                 <label htmlFor="hole">Donut Size</label>
                 <input type="number" placeholder="Choose a number between 0 and 99"/>

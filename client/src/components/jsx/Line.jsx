@@ -1,11 +1,16 @@
 import "../css/Line.css"
+import "../css/Basic.css"
 
-import Basic from "../jsx/Basic"
+import Data from "./Data"
+import Axis from "./Axis"
+import General from "./General"
 
 const Line = () => {
     return (
         <div>
-            <Basic/>
+            <General/>
+            <Data/>
+            <Axis/>
         </div>
     )
 }
