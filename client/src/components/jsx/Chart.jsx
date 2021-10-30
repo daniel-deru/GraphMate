@@ -7,7 +7,12 @@ const Chart = () => {
     const [data, setData] = useState()
     const type = useSelector( ( state ) => state.type)
     const storeData = useSelector((state) => state.data)
-    const layout = {width: window.innerWidth/2, title: 'Enter Your Title here'}
+    const layout = {
+        width: window.innerWidth/2, 
+        title: storeData.title
+    }
+
+    console.log(storeData)
 
     const createGraph = () => {
         let mode = null
@@ -23,7 +28,15 @@ const Chart = () => {
                 y: storeData.y,
                 x: storeData.x,
                 type: type,
-                mode: mode
+                mode: mode,
+                marker: {
+                    colors: storeData.colors,
+                    size: storeData.size
+                },
+                line: {
+                    width: storeData.width,
+                    colors: storeData.colors
+                }
             }
         ]
         return data
@@ -35,6 +48,11 @@ const Chart = () => {
                 values: storeData.y,
                 labels: storeData.x,
                 type: type,
+                marker: {
+                    colors: storeData.colors
+                },
+                textposition: storeData.textPosition,
+                hole: storeData.hole
             }
         ]
         return data
@@ -54,6 +72,8 @@ const Chart = () => {
                 config={{   scrollZoom: false,
                             staticPlot: true,
                             displayModeBar: false,
+                            showlegend: true,
+                            displaylogo: false
                         }}
            />
         </div>

@@ -20,17 +20,12 @@ header h1 {
     text-align: left;
     margin: 0;
     padding: 0 10px;
+    flex: 1
 }
 
-/* #control-container {
-    width: 50vw;
+header > div {
+    flex: 2;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-evenly;
 }
 
-#control-container > * {
-    height: fit-content;
-    outline: none;
-}
- */

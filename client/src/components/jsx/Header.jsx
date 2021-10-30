@@ -38,20 +38,23 @@ const Header = () => {
     // }
     return (
         <header>
-            <h1>Charter</h1>
-            <select ref={selectRef} name="chart" id="chart-select" onChange={(e) => handleRoute(e.target.value)}>
-                <option value="/" disabled>Select Chart Type</option>
-                <option value="/line">Line Chart</option>
-                <option value="/bar">Bar Chart</option>
-                <option value="/pie">Pie Chart</option>
-                <option value="/histogram">Histogram</option>
-                <option value="/scatter">Scatter Plot</option>
-            </select>
-            <div className="form-field-container">
+            <h1>GraphMate</h1>
+            <div>
+
+                <select ref={selectRef} name="chart" id="chart-select" onChange={(e) => handleRoute(e.target.value)}>
+                    <option value="/" disabled>Select Chart Type</option>
+                    <option value="/line">Line Chart</option>
+                    <option value="/bar">Bar Chart</option>
+                    <option value="/pie">Pie Chart</option>
+                    <option value="/histogram">Histogram</option>
+                    <option value="/scatter">Scatter Plot</option>
+                </select>
+
                 <button type="button">Load Data</button>
+
+                <button type="button">Download</button>
+
             </div>
-            <button type="button">Download</button>
-      
         </header>
     )
 }

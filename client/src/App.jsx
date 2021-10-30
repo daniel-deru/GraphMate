@@ -47,7 +47,6 @@ function App() {
       doc.save("image")
     })
   }
-  console.log(window.location)
   return (
       <div className="App">
           <Header/>
