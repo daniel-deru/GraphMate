@@ -4,6 +4,7 @@ import "../css/Basic.css"
 import Data from "./Data"
 import Axis from "./Axis"
 import General from "./General"
+import Cartesian from "./Cartesian"
 
 const Histogram = () => {
     return (
@@ -11,6 +12,7 @@ const Histogram = () => {
             <General/>
             <Data/>
             <Axis/>
+            <Cartesian/>
         </div>
     )
 }

@@ -14,18 +14,40 @@ const Chart = () => {
     const [data, setData] = useState()
     const type = useSelector( ( state ) => state.type)
     const storeData = useSelector((state) => state.data)
-    
+
     const layout = {
-        width: window.innerWidth/2, 
+        width: window.innerWidth/2,
         title: storeData.title,
+        titlefont: {
+            color: "black",
+            size: 20
+        },
         xaxis: {
             title: storeData.x_name,
+            titlefont: {
+                color: "black",
+                size: 20
+            },
+            tickfont: {
+                color: "black",
+                size: 20
+            },
             zeroline: false,
-            showgrid: true
+            showgrid: false,
+            tickangle: -45,
         },
         yaxis: {
             title: storeData.y_name,
-            showline: true
+            titlefont: {
+                color: "black",
+                size: 20
+            },
+            tickfont: {
+                color: "black",
+                size: 20
+            },
+            showline: false,
+            gridwidth: 2
         }
     }
 
@@ -45,9 +67,16 @@ const Chart = () => {
                 type: type,
                 mode: mode,
                 width: storeData.width,
+                text: storeData.text,
+                textfont: {
+                    color: "white",
+                    size: 10
+                },
+                textposition: "auto",
                 line: {
                     width: storeData.width,
-                    color: storeData.colors
+                    color: storeData.colors,
+                    dash: storeData.dash
                 },
                 marker: {
                     color: storeData.colors,
@@ -69,6 +98,7 @@ const Chart = () => {
                     colors: storeData.colors
                 },
                 textposition: storeData.textPosition,
+                textinfo: "label+percent",
                 hole: storeData.hole
             }
         ]

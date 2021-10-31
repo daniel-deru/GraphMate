@@ -2,9 +2,11 @@ import "../css/Bar.css"
 import "../../index.css"
 import "../css/Basic.css"
 
+// Components
 import Data from "./Data"
 import Axis from "./Axis"
 import General from "./General"
+import Cartesian from "./Cartesian"
 
 //Redux
 import { actionCreators } from "../../state/actionCreators/export"
@@ -21,13 +23,7 @@ const Bar = () => {
             <General/>
            <Data/>
            <Axis/>
-           <div className="form-container">
-                <div className="form-field-container">
-                    <label htmlFor="label">Direct Labels</label>
-                    <input type="checkbox" className="checkbox" />
-                </div>
-           </div>
-    
+           <Cartesian/>  
         </div>
     )
 }

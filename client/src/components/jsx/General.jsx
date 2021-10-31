@@ -37,15 +37,13 @@ const General = () => {
                     <label htmlFor="theme">Choose Your Colors</label>
                     <input type="text" placeholder="blue, #f9f9f9, red" name="color" id="color" onChange={(e) => colorHandler(e.target.value)}/>
                 </div>
+                <div className="form-field-container">
+                    <label htmlFor="titlecolor">Title Color</label>
+                    <input type="text" name="titlecolor" id="" />
+                    <label htmlFor="titlesize">Title Size</label>
+                    <input type="text" name="titlesize" id="" />
+                </div>
             </div>
-            {/* <div> */}
-            {!correctGraph &&  <div className="form-field-container">
-                                    <label htmlFor="width">Width</label>
-                                    <input type="number" min="1"  name="width" id="" onChange={(e) => loadData({...data, width: parseInt(e.target.value)/100})}/>
-                                </div>}
-            {/* </div> */}
-         
-
         </div>
     )
 }
