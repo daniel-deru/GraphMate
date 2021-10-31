@@ -1,18 +1,33 @@
+//CSS
 import "../css/Chart.css"
+
+// Third party Libs
 import Plot from "react-plotly.js"
+
+// Redux
 import { useSelector } from "react-redux"
+
+// Hooks
 import { useEffect, useState } from "react"
 
 const Chart = () => {
     const [data, setData] = useState()
     const type = useSelector( ( state ) => state.type)
     const storeData = useSelector((state) => state.data)
+    
     const layout = {
         width: window.innerWidth/2, 
-        title: storeData.title
+        title: storeData.title,
+        xaxis: {
+            title: storeData.x_name,
+            zeroline: false,
+            showgrid: true
+        },
+        yaxis: {
+            title: storeData.y_name,
+            showline: true
+        }
     }
-
-    console.log(storeData)
 
     const createGraph = () => {
         let mode = null
@@ -29,14 +44,16 @@ const Chart = () => {
                 x: storeData.x,
                 type: type,
                 mode: mode,
-                marker: {
-                    colors: storeData.colors,
-                    size: storeData.size
-                },
+                width: storeData.width,
                 line: {
                     width: storeData.width,
-                    colors: storeData.colors
+                    color: storeData.colors
+                },
+                marker: {
+                    color: storeData.colors,
+                    size: storeData.size,
                 }
+                
             }
         ]
         return data
@@ -60,7 +77,11 @@ const Chart = () => {
 
     useEffect(() => {
         const data = type == "pie" ? createPie() : createGraph()
+        if(storeData.colors.length == 1){
+            storeData.colors = storeData.colors[0]
+        }
         setData(data)
+        
     }, [type, storeData])
 
     

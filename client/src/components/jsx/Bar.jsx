@@ -6,23 +6,22 @@ import Data from "./Data"
 import Axis from "./Axis"
 import General from "./General"
 
+//Redux
+import { actionCreators } from "../../state/actionCreators/export"
+import { bindActionCreators } from "redux"
+import { useSelector, useDispatch } from "react-redux"
+
+
 const Bar = () => {
+    const dispatch = useDispatch()
+    const data = useSelector((state) => state.data)
+    const { loadData } = bindActionCreators(actionCreators, dispatch)
     return (
         <div>
             <General/>
            <Data/>
            <Axis/>
            <div className="form-container">
-                <div className="form-field-container">
-                    <label htmlFor="width">Width</label>
-                    <select name="width" id="">
-                        <option value="" disabled>Select Width</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-                </div>
                 <div className="form-field-container">
                     <label htmlFor="label">Direct Labels</label>
                     <input type="checkbox" className="checkbox" />

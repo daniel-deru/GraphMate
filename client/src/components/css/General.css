@@ -1,3 +1,7 @@
-#general {
+/* #general {
+    display: flex;
+} */
+
+.form-container {
     display: flex;
 }

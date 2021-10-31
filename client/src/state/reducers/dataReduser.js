@@ -1,4 +1,12 @@
-const dataSample = {x: [1, 2, 3], y: [1, 2, 3]}
+const dataSample = {
+    x: [1, 2, 3], 
+    y: [1, 2, 3],
+    type: "scatter",
+    mode: "markers",
+    width: 1,
+    colors: ["lightblue"],
+    size: ["blue"],
+}
 
 const dataReduser = (state=dataSample, action) => {
     switch(action.type){

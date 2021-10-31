@@ -12,19 +12,40 @@ import { useState } from "react"
 const General = () => {
     const dispatch = useDispatch()
     const { loadData } = bindActionCreators(actionCreators, dispatch)
+    const graph = window.location.pathname
+    const correctGraph = graph == "/pie" || graph == "/scatter"
 
     const data = useSelector((state) => state.data)
 
+    const titleHandler = (title) => {
+        loadData({...data, title})
+    }
+
+    const colorHandler = (value) => {
+        const colors = window.location.pathname == "/line" ? value : value.split(",")
+        loadData({...data, colors})
+    }
+
     return (
         <div id="general">
-            <div className="form-field-container" id="title">
-                <label htmlFor="Title">Enter Your Title</label>
-                <input type="text" placeholder="My Title" name="Title"  onChange={(e) =>  loadData({...data, title: e.target.value})}/>
+            <div className="form-container">
+                <div className="form-field-container" id="title">
+                    <label htmlFor="Title">Enter Your Title</label>
+                    <input type="text" placeholder="My Title" name="Title"  onChange={(e) =>  titleHandler(e.target.value)}/>
+                </div>
+                <div className="form-field-container" id="color">
+                    <label htmlFor="theme">Choose Your Colors</label>
+                    <input type="text" placeholder="blue, #f9f9f9, red" name="color" id="color" onChange={(e) => colorHandler(e.target.value)}/>
+                </div>
             </div>
-            <div className="form-field-container" id="color">
-                <label htmlFor="theme">Choose Your Colors</label>
-                <input type="text" placeholder="blue, #f9f9f9, red" name="color" id="color" onChange={(e) =>  loadData({...data, colors: e.target.value.split(",")})}/>
-            </div>
+            {/* <div> */}
+            {!correctGraph &&  <div className="form-field-container">
+                                    <label htmlFor="width">Width</label>
+                                    <input type="number" min="1"  name="width" id="" onChange={(e) => loadData({...data, width: parseInt(e.target.value)/100})}/>
+                                </div>}
+            {/* </div> */}
+         
+
         </div>
     )
 }
