@@ -1,20 +1,18 @@
-import "../../css/Scatter.css"
-import "../../css/Basic.css"
+// CSS
+import "../../css/Fields.css"
 
 
 // Components
-import Data from "../Fields/Data"
-import Axis from "../Fields/Axis"
 import General from "../Fields/General"
 import Cartesian from "../Fields/Cartesian"
+import Lines from "../Fields/Lines"
 
 const Scatter = () => {
     return (
-        <div>
+        <div className="field-container">
             <General/>
-            <Data/>
-            <Axis/>
             <Cartesian/>
+            <Lines/>
         </div>
     )
 }

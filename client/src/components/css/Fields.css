@@ -1,0 +1,30 @@
+.field-container {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 80vh;
+    min-width: fit-content;
+    max-width: 50vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+.field-container section {
+    display: contents;
+}
+
+.field-container div input, 
+.field-container div textarea,
+.field-container div select {
+    outline-color: var(--main-blue);
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 2px 5px;
+    margin: 0px 10px 10px 10px;
+    width: 20vw;
+}
+
+.field-container label {
+    display: block;
+}

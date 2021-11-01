@@ -1,18 +1,16 @@
-import "../../css/Histogram.css"
-import "../../css/Basic.css"
+// CSS
+import "../../css/Fields.css"
 
-import Data from "../Fields/Data"
-import Axis from "../Fields/Axis"
 import General from "../Fields/General"
 import Cartesian from "../Fields/Cartesian"
+import Bars from "../Fields/Bars"
 
 const Histogram = () => {
     return (
-        <div>
+        <div className="field-container">
             <General/>
-            <Data/>
-            <Axis/>
             <Cartesian/>
+            <Bars/>
         </div>
     )
 }

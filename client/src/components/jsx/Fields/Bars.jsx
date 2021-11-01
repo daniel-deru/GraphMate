@@ -1,13 +1,14 @@
-
+// CSS
+import "../../css/Fields.css"
 
 const Bars = () => {
     return (
-        <div>
-            <div className="form-field-container">
+        <section className="">
+            <div className="">
                 <label htmlFor="text">Text Inside</label>
                 <input type="text" placeholder="use a comma to separate the values" />
             </div>
-        </div>
+        </section>
     )
 }
 

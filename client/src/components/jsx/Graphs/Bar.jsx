@@ -1,12 +1,10 @@
-import "../../css/Bar.css"
-import "../../../index.css"
-import "../../css/Basic.css"
+//CSS
+import "../../css/Fields.css"
 
 // Components
-import Data from "../Fields/Data"
-import Axis from "../Fields/Axis"
 import General from "../Fields/General"
 import Cartesian from "../Fields/Cartesian"
+import Bars from "../Fields/Bars"
 
 //Redux
 import { actionCreators } from "../../../state/actionCreators/export"
@@ -19,11 +17,10 @@ const Bar = () => {
     const data = useSelector((state) => state.data)
     const { loadData } = bindActionCreators(actionCreators, dispatch)
     return (
-        <div>
+        <div className="field-container">
             <General/>
-           <Data/>
-           <Axis/>
-           <Cartesian/>  
+            <Cartesian/>
+            <Bars/>
         </div>
     )
 }

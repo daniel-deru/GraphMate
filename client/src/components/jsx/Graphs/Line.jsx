@@ -1,12 +1,10 @@
 // CSS
-import "../../css/Line.css"
-import "../../css/Basic.css"
+import "../../css/Fields.css"
 
 // Components
-import Data from "../Fields/Data"
-import Axis from "../Fields/Axis"
 import General from "../Fields/General"
 import Cartesian from "../Fields/Cartesian"
+import Lines from "../Fields/Lines"
 
 // Redux
 import { actionCreators } from "../../../state/actionCreators/export"
@@ -19,21 +17,22 @@ const Line = () => {
     const { loadData} = bindActionCreators(actionCreators, dispatch)
 
     return (
-        <div>
+        <div className="field-container">
             <General/>
-            <Data/>
-            <Axis/>
             <Cartesian/>
-            <div className="form-field-container">
-                <label htmlFor="dash">Choose a Line Type</label>
-                <select name="dash" id="" onChange={(e) => loadData({...data, dash: e.target.value})}>
-                    <option value="" disabled selected>Choose a Line Type</option>
-                    <option value="dash">Dash</option>
-                    <option value="solid">Solid</option>
-                    <option value="dot">Dot</option>
-                    <option value="dashdot">DashDot</option>
-                </select>
-            </div>
+            <Lines/>
+            <section>
+                <div>
+                    <label htmlFor="dash">Choose a Line Type</label>
+                    <select name="dash" id="" onChange={(e) => loadData({...data, dash: e.target.value})}>
+                        <option value="" disabled selected>Choose a Line Type</option>
+                        <option value="dash">Dash</option>
+                        <option value="solid">Solid</option>
+                        <option value="dot">Dot</option>
+                        <option value="dashdot">DashDot</option>
+                    </select>
+                </div>
+            </section>
         </div>
     )
 }

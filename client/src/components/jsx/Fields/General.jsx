@@ -1,5 +1,6 @@
-import "../../css/General.css"
-import "../../css/Basic.css"
+// import "../../css/General.css"
+import "../../css/Fields.css"
+
 
 // Redux
 import { bindActionCreators } from 'redux'
@@ -10,41 +11,68 @@ import { actionCreators } from '../../../state/actionCreators/export'
 import { useState } from "react"
 
 const General = () => {
+    const data = useSelector((state) => state.data)
     const dispatch = useDispatch()
     const { loadData } = bindActionCreators(actionCreators, dispatch)
-    const graph = window.location.pathname
-    const correctGraph = graph == "/pie" || graph == "/scatter"
 
-    const data = useSelector((state) => state.data)
-
-    const titleHandler = (title) => {
-        loadData({...data, title})
+    const inputHandler = (e) => {
+        let graphData = {...data}
+        const value = e.target.value
+        switch (e.target.id) {
+            case "title": 
+                graphData.title = value
+                break
+            case "graph-color": 
+                graphData.colors = window.location.pathname == "/line" ? value : value.split(",")
+                break
+            case "title-color":
+                graphData.titleColor = value
+                break
+            case "title-size":
+                graphData.titleSize = value
+                break
+            case "x-values":
+                graphData.x = value.split(",")
+                break
+            case "y-values":
+                graphData.y = value.split(",")
+                break
+        }
+        loadData(graphData)
     }
 
-    const colorHandler = (value) => {
-        const colors = window.location.pathname == "/line" ? value : value.split(",")
-        loadData({...data, colors})
-    }
-
+    console.log(data)
     return (
-        <div id="general">
-            <div className="form-container">
-                <div className="form-field-container" id="title">
-                    <label htmlFor="Title">Enter Your Title</label>
-                    <input type="text" placeholder="My Title" name="Title"  onChange={(e) =>  titleHandler(e.target.value)}/>
-                </div>
-                <div className="form-field-container" id="color">
-                    <label htmlFor="theme">Choose Your Colors</label>
-                    <input type="text" placeholder="blue, #f9f9f9, red" name="color" id="color" onChange={(e) => colorHandler(e.target.value)}/>
-                </div>
-                <div className="form-field-container">
-                    <label htmlFor="titlecolor">Title Color</label>
-                    <input type="text" name="titlecolor" id="" />
-                    <label htmlFor="titlesize">Title Size</label>
-                    <input type="text" name="titlesize" id="" />
-                </div>
+        <section id="general" className="">
+
+            <div className="" >
+                <label htmlFor="Title">Enter Your Title</label>
+                <input type="text" id="title" placeholder="My Title" name="Title"  onChange={(e) => inputHandler(e)}/>
             </div>
-        </div>
+
+            <div className="" >
+                <label htmlFor="theme">Choose Your Graph Color</label>
+                <input type="text" id="graph-color" placeholder="blue, #f9f9f9, red" name="color" onChange={(e) => inputHandler(e)}/>
+            </div>
+
+            <div className="">
+                <label htmlFor="titlecolor">Title Color</label>
+                <input type="text" id="title-color" name="titlecolor" placeholder="Example: #45ff00" onChange={(e) => inputHandler(e)}/>
+            </div>
+
+            <div>
+                <label htmlFor="titlesize">Title Size</label>
+                <input type="text" id="title-size" name="titlesize" placeholder="Example: 2" onChange={(e) => inputHandler(e)}/>
+            </div>
+            <div  className="">
+                <label htmlFor="labels">Labels or X</label>
+                <textarea  name="labels" id="x-values" placeholder="Example: Label1, Label2, Label3" cols="30" rows="10" onChange={(e) => inputHandler(e)}></textarea>
+            </div>
+            <div  className="">
+                <label htmlFor="values">Values or Y</label>
+                <textarea name="values" id="y-values" placeholder="Example: 2, 3, 4" cols="30" rows="10" onChange={(e) => inputHandler(e)}></textarea>
+            </div>
+        </section>
     )
 }
 
