@@ -1,15 +1,15 @@
 // CSS
-import "../css/Line.css"
-import "../css/Basic.css"
+import "../../css/Line.css"
+import "../../css/Basic.css"
 
 // Components
-import Data from "./Data"
-import Axis from "./Axis"
-import General from "./General"
-import Cartesian from "./Cartesian"
+import Data from "../Fields/Data"
+import Axis from "../Fields/Axis"
+import General from "../Fields/General"
+import Cartesian from "../Fields/Cartesian"
 
 // Redux
-import { actionCreators } from "../../state/actionCreators/export"
+import { actionCreators } from "../../../state/actionCreators/export"
 import { bindActionCreators } from "redux"
 import { useSelector, useDispatch } from "react-redux"
 

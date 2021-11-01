@@ -1,13 +1,13 @@
-import "../css/Pie.css"
-import "../../index.css"
-import "../css/Basic.css"
+import "../../css/Pie.css"
+import "../../../index.css"
+import "../../css/Basic.css"
 import { useState } from "react"
 
-import Data from "./Data"
-import General from "./General"
+import Data from "../Fields/Data"
+import General from "../Fields/General"
 
 // Redux
-import { actionCreators } from "../../state/actionCreators/export"
+import { actionCreators } from "../../../state/actionCreators/export"
 import { bindActionCreators } from "redux"
 import { useDispatch, useSelector } from "react-redux"
 

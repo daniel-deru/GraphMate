@@ -1,10 +1,10 @@
-import "../css/General.css"
-import "../css/Basic.css"
+import "../../css/General.css"
+import "../../css/Basic.css"
 
 // Redux
 import { bindActionCreators } from 'redux'
 import { useSelector, useDispatch } from 'react-redux'
-import { actionCreators } from '../../state/actionCreators/export'
+import { actionCreators } from '../../../state/actionCreators/export'
 
 // Hooks
 import { useState } from "react"

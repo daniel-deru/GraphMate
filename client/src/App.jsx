@@ -17,11 +17,11 @@ import { useSelector, useDispatch } from "react-redux"
 import Header from "./components/jsx/Header"
 import Home from "./components/jsx/Home"
 import Chart from "./components/jsx/Chart"
-import Bar from "./components/jsx/Bar"
-import Line from "./components/jsx/Line"
-import Pie from "./components/jsx/Pie"
-import Histogram from "./components/jsx/Histogram"
-import Scatter from "./components/jsx/Scatter"
+import Bar from "./components/jsx/Graphs/Bar"
+import Line from "./components/jsx/Graphs/Line"
+import Pie from "./components/jsx/Graphs/Pie"
+import Histogram from "./components/jsx/Graphs/Histogram"
+import Scatter from "./components/jsx/Graphs/Scatter"
 
 function App() {
 

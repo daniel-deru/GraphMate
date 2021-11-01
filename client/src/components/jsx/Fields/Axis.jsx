@@ -1,7 +1,7 @@
-import "../css/Axis.css"
+import "../../css/Axis.css"
 
 // Redux
-import { actionCreators } from "../../state/actionCreators/export"
+import { actionCreators } from "../../../state/actionCreators/export"
 import { bindActionCreators } from "redux"
 import { useSelector, useDispatch } from "react-redux"
 

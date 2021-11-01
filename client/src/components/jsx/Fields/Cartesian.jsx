@@ -1,4 +1,4 @@
-import "../css/Cartesian.css"
+import "../../css/Cartesian.css"
 
 const Cartesian = () => {
     return (

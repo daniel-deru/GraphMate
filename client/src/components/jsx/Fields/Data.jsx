@@ -1,5 +1,5 @@
-import "../css/Basic.css"
-import { actionCreators } from "../../state/actionCreators/export"
+import "../../css/Basic.css"
+import { actionCreators } from "../../../state/actionCreators/export"
 
 // Import Hooks
 import { useRef, useState } from "react"
