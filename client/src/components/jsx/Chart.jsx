@@ -19,34 +19,34 @@ const Chart = () => {
         width: window.innerWidth/2,
         title: storeData.title,
         titlefont: {
-            color: "black",
-            size: 20
+            color: storeData.titleColor,
+            size: storeData.titleSize
         },
         xaxis: {
-            title: storeData.x_name,
+            title: storeData.xTitle,
             titlefont: {
-                color: "black",
-                size: 20
+                color: storeData.xTitleColor,
+                size: storeData.xTitleSize
             },
             tickfont: {
-                color: "black",
-                size: 20
+                color: storeData.xScaleColor,
+                size: storeData.xScaleSize
             },
             zeroline: false,
-            showgrid: false,
-            tickangle: -45,
+            showgrid: storeData.showGrid,
+            tickangle: storeData.tickAngle,
         },
         yaxis: {
-            title: storeData.y_name,
+            title: storeData.yTitle,
             titlefont: {
-                color: "black",
-                size: 20
+                color: storeData.yTitleColor,
+                size: storeData.yTitleSize
             },
             tickfont: {
-                color: "black",
-                size: 20
+                color: storeData.yScaleColor,
+                size: storeData.yScaleSize
             },
-            showline: false,
+            showline: storeData.showLines,
             gridwidth: 2
         }
     }

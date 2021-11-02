@@ -58,9 +58,22 @@ const Cartesian = () => {
             case "y-title":
                 graphData.yTitle = value
                 break
+            case "x-scale-color":
+                graphData.xScaleColor = value
+                break
+            case "x-scale-size":
+                graphData.xScaleSize = value
+                break
+            case "y-scale-color":
+                graphData.yScaleColor = value
+                break
+            case "y-scale-size":
+                graphData.yScaleSize = value
+                break
 
         }
         loadData(graphData)
+        console.log(graphData)
     }
 
     return (
@@ -113,6 +126,26 @@ const Cartesian = () => {
             <div className="">
                 <label htmlFor="y-name">Y-Axis Title</label>
                 <input type="text" id="y-title" placeholder="Example: My Y-axis" onChange={(e) => inputHandler(e)}/>
+            </div>
+
+            <div>
+                <label htmlFor="">X Scale Color</label>
+                <input type="text" placeholder="Example: green" id="x-scale-color" onChange={(e) => inputHandler(e)}/>
+            </div>
+
+            <div>
+                <label htmlFor="">X Scale Size</label>
+                <input type="text" placeholder="Example: 5" id="x-scale-size" onChange={(e) => inputHandler(e)}/>
+            </div>
+
+            <div>
+                <label htmlFor="">Y Scale Color</label>
+                <input type="text" placeholder="Example: green" id="y-scale-color" onChange={(e) => inputHandler(e)}/>
+            </div>
+
+            <div>
+                <label htmlFor="">Y Scale Size</label>
+                <input type="text"placeholder="Example: 5" id="y-scale-size" onChange={(e) => inputHandler(e)}/>
             </div>
             
         </section>

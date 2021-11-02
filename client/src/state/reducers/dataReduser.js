@@ -6,6 +6,7 @@ const dataSample = {
     width: 1,
     colors: ["lightblue"],
     size: ["blue"],
+    xTitleColor: "black"
 }
 
 const dataReduser = (state=dataSample, action) => {

@@ -40,8 +40,6 @@ const General = () => {
         }
         loadData(graphData)
     }
-
-    console.log(data)
     return (
         <section id="general" className="">
 
