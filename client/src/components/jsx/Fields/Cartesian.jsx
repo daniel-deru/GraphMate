@@ -35,7 +35,7 @@ const Cartesian = () => {
                 graphData.showGrid = checked
                 break
             case "width":
-                graphData.width = value
+                graphData.width = (value / 20)
                 break
             case "tick-angle": 
                 graphData.tickAngle = (value/100*360)
@@ -143,7 +143,7 @@ const Cartesian = () => {
 
             <div className="">
                 <label htmlFor="width">Width</label>
-                <input type="number" min="1"  name="width" id="width" placeholder="Example: 70" onChange={(e) => inputHandler(e)}/>
+                <input type="number" min="1" max="20"  name="width" id="width" placeholder="Example: 70" onChange={(e) => inputHandler(e)}/>
             </div>
             
             <div className="">

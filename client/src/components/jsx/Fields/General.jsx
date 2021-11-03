@@ -39,6 +39,7 @@ const General = () => {
                 break
         }
         loadData(graphData)
+        console.log(graphData)
     }
     return (
         <section id="general" className="">

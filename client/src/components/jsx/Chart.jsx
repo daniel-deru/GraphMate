@@ -79,7 +79,7 @@ const Chart = () => {
                 },
                 marker: {
                     color: storeData.colors,
-                    size: storeData.size,
+                    size: storeData.dotSize,
                 }
                 
             }
