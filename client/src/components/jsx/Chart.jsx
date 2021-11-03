@@ -46,8 +46,7 @@ const Chart = () => {
                 color: storeData.yScaleColor,
                 size: storeData.yScaleSize
             },
-            showline: storeData.showLines,
-            gridwidth: 2
+            showline: storeData.showLines
         }
     }
 
@@ -67,10 +66,10 @@ const Chart = () => {
                 type: type,
                 mode: mode,
                 width: storeData.width,
-                text: storeData.text,
+                text: storeData.textInside,
                 textfont: {
-                    color: "white",
-                    size: 10
+                    color: storeData.titleColor,
+                    size: storeData.titleSize
                 },
                 textposition: "auto",
                 line: {
@@ -98,7 +97,7 @@ const Chart = () => {
                     colors: storeData.colors
                 },
                 textposition: storeData.textPosition,
-                textinfo: "label+percent",
+                textinfo: storeData.pieText,
                 hole: storeData.hole
             }
         ]

@@ -31,6 +31,14 @@ const Pie = () => {
                         <option value="outside">Outside</option>
                     </select>
                 </div>
+                <div>
+                    <label htmlFor="display-text">Display Text</label>
+                    <select name="textposition" id="" onChange={(e) => loadData({...data, pieText: e.target.value})}>
+                        <option value="" disabled selected>Select Text Display</option>
+                        <option value="percent">Percent</option>
+                        <option value="label+percent">Label and Percent</option>
+                    </select>
+                </div>
             </section>
             
         </div>

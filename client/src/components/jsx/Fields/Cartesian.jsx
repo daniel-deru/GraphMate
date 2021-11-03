@@ -38,19 +38,19 @@ const Cartesian = () => {
                 graphData.width = value
                 break
             case "tick-angle": 
-                graphData.tickAngle = value
+                graphData.tickAngle = (value/100*360)
                 break
             case "x-title-color":
                 graphData.xTitleColor = value
                 break
             case "x-title-size":
-                graphData.xTitleColor = value
+                graphData.xTitleSize = value
                 break
             case "y-title-color":
                 graphData.yTitleColor = value
                 break
             case "y-title-size":
-                graphData.yTitleColor = value
+                graphData.yTitleSize = value
                 break
             case "x-title":
                 graphData.xTitle = value
@@ -79,33 +79,19 @@ const Cartesian = () => {
     return (
         <section className="">
             <div className="">
-                <label htmlFor="showlines">Show Lines</label>
-                <input type="checkbox" id="showlines" name="showlines" onChange={(e) => inputHandler(e)}/>
+                <label htmlFor="x-name">X-Axis Title</label>
+                <input type="text" id="x-title" placeholder="Example: My X-axis" onChange={(e) => inputHandler(e)}/>
             </div>
 
             <div className="">
-                <label htmlFor="showgrid">Show Grid</label>
-                <input type="checkbox" name="showgrid" id="showgrid" onChange={(e) => inputHandler(e)}/>
+                <label htmlFor="y-name">Y-Axis Title</label>
+                <input type="text" id="y-title" placeholder="Example: My Y-axis" onChange={(e) => inputHandler(e)}/>
             </div>
 
-            <div className="">
-                <label htmlFor="width">Width</label>
-                <input type="number" min="1"  name="width" id="width" placeholder="Example: 70" onChange={(e) => inputHandler(e)}/>
-            </div>
-            
-            <div className="">
-                <label htmlFor="tickangle">Tick Angle</label>
-                <input type="range" min="0" max="100" name="tickangle" id="tick-angle" onChange={(e) => inputHandler(e)}/>
-            </div>
 
             <div className="">
                 <label htmlFor="xtitlecolor">X-Axis Title Color</label>
                 <input type="text" name="xtitlecolor" id="x-title-color" placeholder="Example: #ff0045" onChange={(e) => inputHandler(e)}/>
-            </div>
-
-            <div>
-                <label htmlFor="xtitlesize">X-Axis Title Size</label>
-                <input type="text" name="xtitlesize" id="x-title-size" placeholder="Example: 2" onChange={(e) => inputHandler(e)}/>
             </div>
 
             <div className="">
@@ -114,18 +100,15 @@ const Cartesian = () => {
             </div>
 
             <div>
+                <label htmlFor="xtitlesize">X-Axis Title Size</label>
+                <input type="text" name="xtitlesize" id="x-title-size" placeholder="Example: 2" onChange={(e) => inputHandler(e)}/>
+            </div>
+
+  
+
+            <div>
                 <label htmlFor="ytitlesize">Y-Axis Title Size</label>
                 <input type="text" name="ytitlesize" id="y-title-size"  placeholder="Example: 2" onChange={(e) => inputHandler(e)}/>
-            </div>
-
-            <div className="">
-                <label htmlFor="x-name">X-Axis Title</label>
-                <input type="text" id="x-title" placeholder="Example: My X-axis" onChange={(e) => inputHandler(e)}/>
-            </div>
-
-            <div className="">
-                <label htmlFor="y-name">Y-Axis Title</label>
-                <input type="text" id="y-title" placeholder="Example: My Y-axis" onChange={(e) => inputHandler(e)}/>
             </div>
 
             <div>
@@ -146,6 +129,26 @@ const Cartesian = () => {
             <div>
                 <label htmlFor="">Y Scale Size</label>
                 <input type="text"placeholder="Example: 5" id="y-scale-size" onChange={(e) => inputHandler(e)}/>
+            </div>
+
+            <div className="">
+                <label htmlFor="showlines">Show Lines</label>
+                <input type="checkbox" id="showlines" name="showlines" onChange={(e) => inputHandler(e)}/>
+            </div>
+
+            <div className="">
+                <label htmlFor="showgrid">Show Grid</label>
+                <input type="checkbox" name="showgrid" id="showgrid" onChange={(e) => inputHandler(e)}/>
+            </div>
+
+            <div className="">
+                <label htmlFor="width">Width</label>
+                <input type="number" min="1"  name="width" id="width" placeholder="Example: 70" onChange={(e) => inputHandler(e)}/>
+            </div>
+            
+            <div className="">
+                <label htmlFor="tickangle">Tick Angle</label>
+                <input type="range" min="0" max="100" name="tickangle" id="tick-angle" onChange={(e) => inputHandler(e)}/>
             </div>
             
         </section>
