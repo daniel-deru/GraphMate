@@ -65,6 +65,7 @@ const Chart = () => {
                 x: storeData.x,
                 type: type,
                 mode: mode,
+                histnorm: storeData.histNorm,
                 width: storeData.width,
                 text: storeData.textInside,
                 textfont: {

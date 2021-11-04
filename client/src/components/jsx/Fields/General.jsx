@@ -18,6 +18,7 @@ const General = () => {
     const inputHandler = (e) => {
         let graphData = {...data}
         const value = e.target.value
+        const graphType = window.location.pathname
         switch (e.target.id) {
             case "title": 
                 graphData.title = value
@@ -32,10 +33,28 @@ const General = () => {
                 graphData.titleSize = value
                 break
             case "x-values":
-                graphData.x = value.split(",")
+                if(graphType == "/histogram"){
+                   if (value) {
+                    graphData.x = value.split(",")
+                    graphData.y = null
+                   } else {
+                    graphData.x = null
+                   }
+                } else {
+                    graphData.x = value.split(",")
+                }
                 break
             case "y-values":
-                graphData.y = value.split(",")
+                if(graphType == "/histogram"){
+                    if (value) {
+                     graphData.y = value.split(",")
+                     graphData.x = null
+                    } else {
+                     graphData.y = null
+                    }
+                 } else {
+                     graphData.y = value.split(",")
+                 }
                 break
         }
         loadData(graphData)
