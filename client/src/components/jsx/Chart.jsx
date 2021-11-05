@@ -116,7 +116,7 @@ const Chart = () => {
 
     
     return (
-        <div>
+        <div id="data">
             <Plot
                 data={data}
                 layout={layout}

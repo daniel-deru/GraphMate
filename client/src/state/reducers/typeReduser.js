@@ -3,7 +3,7 @@ const typeReduser = (state="pie", action) => {
         case "update graph":
             return action.payload
         default:
-            return "pie"
+            return null
         
     }
 }
