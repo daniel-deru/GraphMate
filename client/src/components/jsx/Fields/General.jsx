@@ -20,6 +20,9 @@ const General = () => {
         const value = e.target.value
         const graphType = window.location.pathname
         switch (e.target.id) {
+            case "background-color":
+                graphData.bgColor = value
+                break
             case "title": 
                 graphData.title = value
                 break
@@ -58,7 +61,6 @@ const General = () => {
                 break
         }
         loadData(graphData)
-        console.log(graphData)
     }
     return (
         <section id="general" className="">
@@ -89,6 +91,10 @@ const General = () => {
             <div  className="">
                 <label htmlFor="values">Values or Y</label>
                 <textarea name="values" id="y-values" placeholder="Example: 2, 3, 4" cols="30" rows="10" onChange={(e) => inputHandler(e)}></textarea>
+            </div>
+            <div>
+                <label htmlFor="">Choose a Background Color</label>
+                <input id="background-color" type="color" placeholder="Chart Background Color" onChange={(e) => inputHandler(e)}/>
             </div>
         </section>
     )

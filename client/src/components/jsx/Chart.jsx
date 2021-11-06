@@ -16,6 +16,8 @@ const Chart = () => {
     const storeData = useSelector((state) => state.data)
 
     const layout = {
+        paper_bgcolor: storeData.bgColor,
+        plot_bgcolor: storeData.bgColor,
         width: window.innerWidth/2,
         title: storeData.title,
         titlefont: {
@@ -111,13 +113,13 @@ const Chart = () => {
             storeData.colors = storeData.colors[0]
         }
         setData(data)
-        
-    }, [type, storeData])
+    }, [type])
 
     
     return (
         <div id="data">
             <Plot
+                id="chart"
                 data={data}
                 layout={layout}
                 config={{   scrollZoom: false,

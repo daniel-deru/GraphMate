@@ -29,3 +29,14 @@ header > div {
     justify-content: space-evenly;
 }
 
+#btn-download,
+header select {
+    background-color: white;
+    color: var(--main-blue);
+    text-decoration: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+

@@ -6,6 +6,7 @@ import { Switch, Route } from "react-router-dom"
 import { useEffect } from "react"
 
 // Import the components
+import Download from './components/jsx/Download';
 import Header from "./components/jsx/Header"
 import Home from "./components/jsx/Home"
 import Chart from "./components/jsx/Chart"
@@ -29,6 +30,7 @@ function App() {
               <Route exact path="/pie" component={Pie}/>
               <Route exact path="/histogram" component={Histogram}/>
               <Route exact path="/scatter" component={Scatter}/>
+              <Route exact path="/download" component={Download}/>
             </Switch>
             {window.location.pathname !== "/" && <Chart/>}
             

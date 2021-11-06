@@ -73,7 +73,6 @@ const Cartesian = () => {
 
         }
         loadData(graphData)
-        console.log(graphData)
     }
 
     return (

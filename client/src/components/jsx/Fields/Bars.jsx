@@ -20,7 +20,6 @@ const Bars = () => {
                 break
         }
         loadData(graphData)
-        console.log(graphData)
     }
 
     return (
