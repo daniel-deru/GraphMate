@@ -1,3 +1,4 @@
+// All the required imports
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -7,6 +8,8 @@ import { store } from "./state/store"
 import { Provider } from "react-redux"
 import { BrowserRouter } from "react-router-dom"
 
+// Render the dom and use browser router to switch between different paths and the 
+// Provider is the redux state being used by all the applications
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

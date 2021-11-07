@@ -17,10 +17,12 @@ import Histogram from "./components/jsx/Graphs/Histogram"
 import Scatter from "./components/jsx/Graphs/Scatter"
 
 function App() {
-
-
   return (
       <div className="App">
+          {/* All the components to be rendered are defined here. The header is always rendered
+              The Home and Info pages render separately on their own and the graphs all render
+              Alongside the chart Component
+          */}
           <Header/>
           <div id="main">
             <Switch>
@@ -39,5 +41,5 @@ function App() {
       </div>
   );
 }
-
+// Export the App component
 export default App;

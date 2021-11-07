@@ -5,12 +5,6 @@ import "../../css/Fields.css"
 import { actionCreators } from "../../../state/actionCreators/export"
 import { bindActionCreators } from "redux"
 import { useSelector, useDispatch } from "react-redux"
-
-const Cartesian = () => {
-    const dispatch = useDispatch()
-    const { loadData } = bindActionCreators(actionCreators, dispatch)
-    const data = useSelector((state) => state.data)
-
 // These are the ids used in the switch statement for reference
 // showlines
 // showgrid
@@ -23,6 +17,14 @@ const Cartesian = () => {
 // x-title
 // y-title
 
+// This component houses all the fields for cartesian type graphs
+const Cartesian = () => {
+    const dispatch = useDispatch()
+    const { loadData } = bindActionCreators(actionCreators, dispatch)
+    const data = useSelector((state) => state.data)
+
+    // This function processes all the data for the cartesian graphs and updates the redux
+    // store accordingly
     const inputHandler = (e) => {
         let graphData = {...data}
         const value = e.target.value

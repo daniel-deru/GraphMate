@@ -12,6 +12,8 @@ import { actionCreators } from "../../../state/actionCreators/export"
 import { bindActionCreators } from "redux"
 import { useSelector, useDispatch } from "react-redux"
 
+// The histogram data is controlled with this component 
+// This component has an extra custom field for the type of histogram. This requires redux to be managed in this component
 const Histogram = () => {
     const dispatch = useDispatch()
     const { loadData } = bindActionCreators(actionCreators, dispatch)

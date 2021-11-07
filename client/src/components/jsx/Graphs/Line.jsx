@@ -11,6 +11,8 @@ import { actionCreators } from "../../../state/actionCreators/export"
 import { bindActionCreators } from "redux"
 import { useSelector, useDispatch } from "react-redux"
 
+
+// This is the line chart fields. it has one extra custom field to control the line type
 const Line = () => {
     const dispatch = useDispatch()
     const data = useSelector((state) => state.data)

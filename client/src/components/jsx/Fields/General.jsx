@@ -7,14 +7,14 @@ import { bindActionCreators } from 'redux'
 import { useSelector, useDispatch } from 'react-redux'
 import { actionCreators } from '../../../state/actionCreators/export'
 
-// Hooks
-import { useState } from "react"
-
+// This component has all the general properties shares by all the graphs
 const General = () => {
     const data = useSelector((state) => state.data)
     const dispatch = useDispatch()
     const { loadData } = bindActionCreators(actionCreators, dispatch)
 
+    // This function controls all the data for the general fields and updates the 
+    // redux store accordingly
     const inputHandler = (e) => {
         let graphData = {...data}
         const value = e.target.value

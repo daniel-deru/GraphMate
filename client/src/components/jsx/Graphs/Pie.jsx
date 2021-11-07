@@ -10,6 +10,8 @@ import { actionCreators } from "../../../state/actionCreators/export"
 import { bindActionCreators } from "redux"
 import { useDispatch, useSelector } from "react-redux"
 
+
+// This is the pie chart fields and it has three extra fields to manage 
 const Pie = () => {
     // const [graphData, setGraphData] = useState({type: "pie"})
     const dispatch = useDispatch()

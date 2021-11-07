@@ -15,7 +15,10 @@ import { Link } from "react-router-dom"
 import { loadData } from "../../state/actionCreators"
 
 const Header = () => {
-    const history = useHistory()  
+    // history is used to navigate to the correct page for the specific graph information
+    const history = useHistory() 
+
+    // This is redux to manage and update the state
     const dispatch = useDispatch()
 
     const type = useSelector( (state) => state.type)
@@ -24,10 +27,12 @@ const Header = () => {
 
     const { loadGraph } = bindActionCreators(actionCreators, dispatch)
     
+    // The reload function makes sure the correct graph is being displayed when the user inputs data
     useEffect(() => {
         reload()
     }, [type])
     
+    // The handleRoute function controls the route and loads the data to the correct graph
     const handleRoute = (e, path) => {
         const route = e.target.value
         history.push(route)
@@ -36,6 +41,7 @@ const Header = () => {
         loadData(data)
     }
 
+     // The reload function makes sure the correct graph is being displayed when the user inputs data
     const reload = () => loadGraph(window.location.pathname.substring(1)) 
 
     return (
@@ -51,10 +57,12 @@ const Header = () => {
                     <option value="/scatter">Scatter Plot</option>
                 </select>}
 
+                {/* The download link send the user to the download page to configure their download options */}
                 { canUse && <><Link id="btn-download" exact to="/download">Download</Link></> }
             </div>
         </header>
     )
 }
 
+// Export the header
 export default Header

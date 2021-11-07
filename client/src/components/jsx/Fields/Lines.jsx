@@ -5,11 +5,14 @@ import { actionCreators } from "../../../state/actionCreators/export"
 import { bindActionCreators } from "redux"
 import { useSelector, useDispatch } from "react-redux"
 
+// This component has all the fields related to line graphs
 const Lines = () => {
     const dispatch = useDispatch()
     const { loadData } = bindActionCreators(actionCreators, dispatch)
     const data = useSelector((state) => state.data)
 
+    // This function controls all the data for the general fields and updates the 
+    // redux store accordingly
     const inputHandler = (e) => {
         let graphData = {...data}
         const value = e.target.value
