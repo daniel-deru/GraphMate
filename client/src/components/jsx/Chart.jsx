@@ -121,6 +121,7 @@ const Chart = () => {
         if(storeData.colors.length == 1){
             storeData.colors = storeData.colors[0]
         }
+        console.log(storeData)
         setData(data)
     }, [type])
 

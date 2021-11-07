@@ -10,3 +10,28 @@
     display: block;
     margin-bottom: 10px
 }
+
+#download button {
+    color: white;
+    border-radius: 5px;
+    background-color: var(--main-blue);
+    font-size: 1em;
+    padding: 5px 8px;
+    cursor: pointer;
+    border: none;
+}
+
+#download select {
+    border-radius: 5px;
+    padding: 5px 8px;
+    outline: none;
+    color: var(--main-blue)
+}
+
+#download input {
+    color: var(--main-blue);
+    border-radius: 5px;
+    padding: 5px 8px;
+    border: 1px solid var(--main-blue);
+    margin: 10px;
+}
