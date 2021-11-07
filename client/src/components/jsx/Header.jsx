@@ -14,13 +14,13 @@ import { useHistory } from "react-router"
 import { Link } from "react-router-dom"
 import { loadData } from "../../state/actionCreators"
 
-
 const Header = () => {
     const history = useHistory()  
     const dispatch = useDispatch()
 
     const type = useSelector( (state) => state.type)
     const data = useSelector((state) => state.data)
+    const canUse = useSelector((state) => state.canUse)
 
     const { loadGraph } = bindActionCreators(actionCreators, dispatch)
     
@@ -42,16 +42,16 @@ const Header = () => {
         <header>
             <h1>GraphMate</h1>
             <div>
-                <select name="chart" id="chart-select" onChange={(e) => handleRoute(e, window.location.pathname)}>
+              { canUse && <select name="chart" id="chart-select" onChange={(e) => handleRoute(e, window.location.pathname)}>
                     <option value="/" disabled selected>Select Chart Type</option>
                     <option value="/line">Line Chart</option>
                     <option value="/bar">Bar Chart</option>
                     <option value="/pie">Pie Chart</option>
                     <option value="/histogram">Histogram</option>
                     <option value="/scatter">Scatter Plot</option>
-                </select>
-                <Link id="btn-download" exact to="/download">Download</Link>
+                </select>}
 
+                { canUse && <><Link id="btn-download" exact to="/download">Download</Link></> }
             </div>
         </header>
     )

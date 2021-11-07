@@ -15,3 +15,12 @@ export const loadData = (data) => {
         })
     }
 }
+
+export const setDevice = (supported) => {
+    return (dispatch) => {
+        dispatch({
+            type: "set device",
+            payload: supported
+        })
+    }
+}
